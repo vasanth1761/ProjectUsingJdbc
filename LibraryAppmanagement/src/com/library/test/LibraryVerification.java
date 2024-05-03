@@ -1,17 +1,20 @@
 package com.library.test;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.library.dao.BookImpl;
 import com.library.model.LibraryP;
 
 
 
 
 public class LibraryVerification {
-	public static void libraryUserPortal()
+	
+	public static void libraryUserPortal() throws ClassNotFoundException, SQLException
 	{    
 		
-	    
+//	    BookImpl loginobj=new BookImpl();
 		Scanner sc=new Scanner(System.in);
 		LibraryP lib=new LibraryP();
 		System.out.println("         --WELCOME TO LIBRARAY-- ");

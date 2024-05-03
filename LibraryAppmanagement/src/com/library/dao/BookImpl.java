@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import com.library.util.BookTable;
 
-public class BookImpl implements BookNameDAO {
+public  class BookImpl implements BookNameDAO {
 	
 
 	@Override
@@ -61,5 +61,32 @@ public class BookImpl implements BookNameDAO {
         System.out.println("The book has successfully added");
 		
 	}
+	public void login()throws ClassNotFoundException,SQLException {
+		
+		Scanner sc=new Scanner(System.in);
+		Connection con=BookTable.getConnection();
+		System.out.println("Enter the username");
+		String name=sc.next();
+		System.out.println("Enter the pasword:");
+		String password=sc.next();
+		String query ="select user_name from login where user_name=? and password_name=?";
+		PreparedStatement p=con.prepareStatement(query);
+		p.setString(1,name);
+		p.setString(2, password);
+		ResultSet re=p.executeQuery();
+		if(!re.next())
+		{
+			System.out.println("you dont have an account");
+			
+		}
+		else
+		{
+			System.out.println("login successfull");
+		}
+		
+				
+	}
+
+
 
 }

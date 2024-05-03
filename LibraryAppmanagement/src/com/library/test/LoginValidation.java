@@ -10,25 +10,31 @@ import com.library.model.LibraryP;
 
 
 public class LoginValidation {
-	public static void loginCalc(String account, LibraryP lib) {
+	
+	public static void loginCalc(String account, LibraryP lib)throws ClassNotFoundException,SQLException {
 
 		Scanner sc = new Scanner(System.in);
+//		BookImpl loginoobj=new BookImpl();
 		
 		while (true) {
 
 			if (account.equals("y") || account.equals("Y")) {
-				System.out.println("---WELCOME TO LOGIN PAGE----");
-				System.out.println("USERNAME:");
-				String user = ValidationmainBody.usernameValidation();
-
-				System.out.println("PASSWORD:");
-				String password = ValidationmainBody.passwordValidation();
-                
-				long phoneNumber = 97865432165l;
-				int id = 101;
-				lib.setName(user);
-				lib.setPhonenumber(phoneNumber);
-				lib.setId(id);
+				BookImpl loginoobj=new BookImpl();
+				
+				
+//				System.out.println("---WELCOME TO LOGIN PAGE----");
+//				System.out.println("USERNAME:");
+//				String user = ValidationmainBody.usernameValidation();
+//
+//				System.out.println("PASSWORD:");
+//				String password = ValidationmainBody.passwordValidation();
+//                
+//				long phoneNumber = 97865432165l;
+//				int id = 101;
+//				lib.setName(user);
+//				lib.setPhonenumber(phoneNumber);
+//				lib.setId(id);
+				loginoobj.login();
 				break;
 
 			} else if (account.equals("N") || account.equals("n")) {
@@ -43,10 +49,10 @@ public class LoginValidation {
 				Long phone = ValidationmainBody.phoneNumberValidation();
 
 				int id = 101;
-//				lib.setName(user);
-//				lib.setPhonenumber(phone);
-//				lib.setId(id);
-//				lib.setName(user);
+				lib.setName(user);
+				lib.setPhonenumber(phone);
+				lib.setId(id);
+				lib.setName(user);
 				break;
 			} else {
 				System.out.println("Enter the valid data:");

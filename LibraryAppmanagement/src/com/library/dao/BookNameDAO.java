@@ -5,5 +5,6 @@ import java.sql.SQLException;
 public interface BookNameDAO {
 	void read()throws ClassNotFoundException,SQLException;
 	void insert()throws ClassNotFoundException,SQLException;
+	void login()throws ClassNotFoundException,SQLException;
 
 }
