@@ -3,7 +3,7 @@ package com.library.test;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class ValidationmainBody {
+public class LibraryValidation {
 
 	public static void usernameLoginAdmin()
 	{    
@@ -22,7 +22,7 @@ public class ValidationmainBody {
 			}
 			else
 			{
-				System.out.println("INVALID USER NAME ");
+				System.err.println("INVALID USER NAME ");
 				System.out.println("Enter the user name again:");
 				userName=sc.next();
 			}
@@ -44,7 +44,7 @@ public class ValidationmainBody {
 			}
 			else
 			{
-				System.out.println("INVALID PASSWORD");
+				System.err.println("INVALID PASSWORD");
 				System.out.println("Enter the password again");
 				password=sc.next();
 			}
@@ -60,38 +60,21 @@ public class ValidationmainBody {
 		while(true)
 		{
 			
-			if(add ==1||add==2)
+			if(add ==1||add==2||add==3)
 			{
 				return add;
 			}
 			else
 			{
-				System.out.printf("Invalid!!!");
-				System.out.println("you only able to add and delete:");
-				System.out.println("You should enter the alpha numeric value:");
+				System.err.printf("Invalid!!!");
+				System.err.println("you only able to add and delete:");
+				System.err.println("You should enter the alpha numeric value:");
 	    		add=sc.nextInt();
 			}
 		}
 	}
 
-	public static int rows()
-	{
-		Scanner sc=new Scanner(System.in);
-		int row=sc.nextInt();
-		while(true)
-		{
-			if(row<=50)
-			{
-				return row;
-			}
-			else
-			{
-				System.out.println("Enter the proper row mentioned above:");
-				System.out.println("you should enter the numeric value :");
-				row=sc.nextInt();
-			}
-		}
-	}
+	
 
 	public static int books()
 	{
@@ -125,7 +108,7 @@ public class ValidationmainBody {
 				}
 				else
 				{
-					System.out.println("you should use uppercase or lowercase:");
+					System.err.println("you should use uppercase or lowercase:");
 					userName=sc.next();
 				}
 			}
@@ -145,11 +128,11 @@ public class ValidationmainBody {
 			}
 			else
 			{
-				System.out.println("you should use one uppercase:");
-				System.out.println("you should use one Lowercaase:");
-				System.out.println("you should use one Specialcase:");
-				System.out.println("you should use one numeric value:");
-				System.out.println("The password length should be minimum 5:");
+				System.err.println("you should use one uppercase:");
+				System.err.println("you should use one Lowercaase:");
+				System.err.println("you should use one Specialcase:");
+				System.err.println("you should use one numeric value:");
+				System.err.println("The password length should be minimum 5:");
 				
 				password=sc.next();
 			}
@@ -187,7 +170,7 @@ public class ValidationmainBody {
 			}
 			else
 			{
-				System.out.println("PART IS NOT AVAILABLE:");
+				System.err.println("PART IS NOT AVAILABLE:");
 				part=sc.nextInt();
 			}
 		}

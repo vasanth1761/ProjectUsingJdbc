@@ -28,20 +28,20 @@ public class Library {
 			case 1:
 		
 				System.out.println("ADMIN NAME:");
-				ValidationmainBody.usernameLoginAdmin();
+				LibraryValidation.usernameLoginAdmin();
 	            
 				System.out.println("ADMIN PASSWORD:");
-				ValidationmainBody.passwordLoginAdmin();
+				LibraryValidation.passwordLoginAdmin();
 				
 				System.out.println("        -------WELCOME ADMIN--------");
-				System.out.println("1.ADD A BOOK"+"\n"+"2.DELETE A BOOK");
+				System.out.println("1.ADD A BOOK"+"\n"+"2.DELETE A BOOK"+"\n"+"3.UPDATE A BOOK");
 				System.out.println("-------------------------------------");
-				int addDelete=ValidationmainBody.addBook();
-				LoginValidation.toSelectAddDelte(addDelete);
+				int addDelete=LibraryValidation.addBook();
+				LibraryBussinessLogic.toSelectAddDelte(addDelete);
 		        return;
 				
 			case 2:
-				LibraryVerification.libraryUserPortal();
+				LibraryUser.libraryUserPortal();
 	            return;
 			case 3:
 				 System.out.println("Exited Successfully");

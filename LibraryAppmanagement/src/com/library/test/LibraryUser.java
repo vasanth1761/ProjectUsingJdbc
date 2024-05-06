@@ -9,7 +9,7 @@ import com.library.model.LibraryP;
 
 
 
-public class LibraryVerification {
+public class LibraryUser {
 	
 	public static void libraryUserPortal() throws ClassNotFoundException, SQLException
 	{    
@@ -20,7 +20,7 @@ public class LibraryVerification {
 		System.out.println("         --WELCOME TO LIBRARAY-- ");
 		System.out.println("DO you have an Account press (Y/N):");
 		String account=sc.next();
-	    LoginValidation.loginCalc( account,lib);
+	    LibraryBussinessLogic.loginCalc( account,lib);
 	    System.out.println("     ------WELCOME------");
 	    System.out.println("----------------------------");
 		System.out.println("Available book types are:");
@@ -32,7 +32,7 @@ public class LibraryVerification {
 		System.out.println("-----------------------------");
 		System.out.println("Enter the book type:");
 		
-		LoginValidation.bookTypes();
+		LibraryBussinessLogic.bookTypes();
 		System.out.println("------------------------------");
 	    System.out.println("Enter the number of days that you have a book:");
 		int days=sc.nextInt();
@@ -50,11 +50,8 @@ public class LibraryVerification {
 		   }
 		}
 		lib.setDays(days);
-		LibraryDetails a=new LibraryDetails();
-		a.libraryOutput(lib.getId(),lib.getPhonenumber());
-		a.libraryOutput(lib.getName());
+		LibraryEnd a=new LibraryEnd();
 		a.libraryOutput(lib.getDays());
-//		Classb b= new Classb();
-//		b.libraryOutput(lib.getDays());
+
 		}
 }

@@ -8,7 +8,14 @@ public class LibraryP {
 		   int days;
 		   double amount;
 		   long phonenumber;
-		   public long getPhonenumber() {
+		   String password;
+		   public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
+		}
+		public long getPhonenumber() {
 			return phonenumber;
 		}
 		public void setPhonenumber(long phoneNumber) {

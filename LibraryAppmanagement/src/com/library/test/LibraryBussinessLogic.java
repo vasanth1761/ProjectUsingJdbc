@@ -9,17 +9,17 @@ import com.library.model.LibraryP;
 
 
 
-public class LoginValidation {
+public class LibraryBussinessLogic {
 	
 	public static void loginCalc(String account, LibraryP lib)throws ClassNotFoundException,SQLException {
 
 		Scanner sc = new Scanner(System.in);
-//		BookImpl loginoobj=new BookImpl();
+     	BookImpl loginoobj=new BookImpl();
 		
 		while (true) {
 
 			if (account.equals("y") || account.equals("Y")) {
-				BookImpl loginoobj=new BookImpl();
+//				BookImpl loginoobj=new BookImpl();
 				
 				
 //				System.out.println("---WELCOME TO LOGIN PAGE----");
@@ -32,6 +32,7 @@ public class LoginValidation {
 //				long phoneNumber = 97865432165l;
 //				int id = 101;
 //				lib.setName(user);
+//				lib.set
 //				lib.setPhonenumber(phoneNumber);
 //				lib.setId(id);
 				loginoobj.login();
@@ -39,23 +40,24 @@ public class LoginValidation {
 
 			} else if (account.equals("N") || account.equals("n")) {
 				System.out.println("---WELCOME TO SIGNUP PAGE----");
-				System.out.println("Enter the user name:");
-				String user = ValidationmainBody.usernameValidation();
-
-				System.out.println("create the password:");
-				String passwor = ValidationmainBody.passwordValidation();
-
-				System.out.println("Enter the phonenumber:");
-				Long phone = ValidationmainBody.phoneNumberValidation();
-
-				int id = 101;
-				lib.setName(user);
-				lib.setPhonenumber(phone);
-				lib.setId(id);
-				lib.setName(user);
+//				System.out.println("Enter the user name:");
+//				String user = ValidationmainBody.usernameValidation();
+//
+//				System.out.println("create the password:");
+//				String passwor = ValidationmainBody.passwordValidation();
+//
+//				System.out.println("Enter the phonenumber:");
+//				Long phone = ValidationmainBody.phoneNumberValidation();
+//
+//				int id = 101;
+//				lib.setName(user);
+//				lib.setPhonenumber(phone);
+//				lib.setId(id);
+//				lib.setName(user);
+				loginoobj.register();
 				break;
 			} else {
-				System.out.println("Enter the valid data:");
+				System.err.println("Enter the valid data:");
 				account = sc.next();
 			}
 
@@ -74,22 +76,22 @@ public class LoginValidation {
 				System.out.println("Available");
 				System.out.println("1.IRONMAN" + "\n" + "2.SUPERMAN" + "\n" + "3.DEADPOOL");
 				System.out.println("Select the type:");
-				int type=ValidationmainBody.bookTypeValid();
+				int type=LibraryValidation.bookTypeValid();
       
 		        switch (type) {
 				case 1:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 2:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 3:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				default:
@@ -104,24 +106,24 @@ public class LoginValidation {
 				System.out.println("Available");
 				System.out.println("1.DRACULA" + "\n" + "2.IT" + "\n" + "3.PET SEMETARY");
 				System.out.println("Select the type:");
-				int horror = ValidationmainBody.bookTypeValid();
+				int horror =LibraryValidation.bookTypeValid();
 				
 					switch (horror)
 
 					{
 					case 1:
 						System.out.println("part 1 or part2");
-						ValidationmainBody.bookPartValidation();
+						LibraryValidation.bookPartValidation();
 						System.out.println("-The book is available-");
 						break;
 					case 2:
 						System.out.println("part 1 or part2");
-						ValidationmainBody.bookPartValidation();
+						LibraryValidation.bookPartValidation();
 						System.out.println("-The book is available-");
 						break;
 					case 3:
 						System.out.println("part 1 or part2");
-						ValidationmainBody.bookPartValidation();
+						LibraryValidation.bookPartValidation();
 						System.out.println("-The book is available-");
 						break;
 					
@@ -133,21 +135,21 @@ public class LoginValidation {
 				System.out.println("Available");
 				System.out.println("1.STATION ELEVAN" + "\n" + "2.DUNE" + "\n" + "3.THE MARTIAN");
 				System.out.println("Select the type:");
-				int science = ValidationmainBody.bookTypeValid();;
+				int science = LibraryValidation.bookTypeValid();;
 				switch (science) {
 				case 1:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 2:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 3:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				}
@@ -158,21 +160,21 @@ public class LoginValidation {
 				System.out.println("Available");
 				System.out.println("1.THE ROAD" + "\n" + "2.HARRY PORTER" + "\n" + "3.TREASURE ISLANDS");
 				System.out.println("Select the type:");
-				int adventure = ValidationmainBody.bookTypeValid();;
+				int adventure = LibraryValidation.bookTypeValid();;
 				switch (adventure) {
 				case 1:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 2:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 3:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				}
@@ -184,21 +186,21 @@ public class LoginValidation {
 
 				System.out.println("1.GAME OF THRONES" + "\n" + "2.THE HOUSE OF DRAGONS" + "\n" + "3.CITY OF GLASS+" );
 				System.out.println("Select the type:");
-				int fantasy =ValidationmainBody.bookTypeValid();
+				int fantasy =LibraryValidation.bookTypeValid();
 				switch (fantasy) {
 				case 1:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 2:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				case 3:
 					System.out.println("part 1 or part2");
-					ValidationmainBody.bookPartValidation();
+					LibraryValidation.bookPartValidation();
 					System.out.println("-The book is available-");
 					break;
 				}
@@ -218,21 +220,13 @@ public class LoginValidation {
 		switch (addDelete) {
 		case 1:
 			daoobj.insert();
-			return;
+			break;
 		case 2:
-			System.out.println("TOTAL ROWS:50");
-			System.out.println("SELECT THE ROW");
-			ValidationmainBody.rows();
-			System.out.println("How many books");
-			int book1 = ValidationmainBody.books();
-			String b[] = new String[book1];
-			for (int i = 0; i < book1; i++) {
-				System.out.println("Enter the book name " + (i + 1));
-				b[i] = sc.next();
-			}
 
-			System.out.println("----The books has successfully deleted-----");
-
+			daoobj.delete();
+            break;
+		case 3:
+			daoobj.update();
 			break;
 
 		}
