@@ -88,8 +88,27 @@ public class LibraryValidation {
 			}
 			else
 			{
-				System.out.println("you should enter the numeric value:");
+				System.err.println("you should enter the numeric value:");
 				 books=sc.nextInt();
+			}
+		}
+	}
+	public static String UserId()
+	{   
+		String s1="^[a-z]+[0-9]+$";
+		Scanner sc=new Scanner(System.in);
+		String userId=sc.next();
+		while(true)
+		{
+			if(userId.matches(s1))
+			{
+				return userId;
+			}
+			else
+			{
+				System.err.println("You should enter the alphabetic value ");
+				userId=sc.next();
+				
 			}
 		}
 	}
@@ -99,17 +118,18 @@ public class LibraryValidation {
 		 
 			
 		 Scanner sc=new Scanner(System.in);
-		 String userName=sc.next();
+		 String name=sc.next();
 			while(true)
-			{
-				if(userName.matches(s1))
+			{     
+				if(name.matches(s1))
 				{
-					return userName;
+				return name;
+					
 				}
 				else
 				{
 					System.err.println("you should use uppercase or lowercase:");
-					userName=sc.next();
+					name=sc.next();
 				}
 			}
 	 }
@@ -188,7 +208,7 @@ public class LibraryValidation {
 			}
 			else
 			{
-				System.out.println("Enter the mention book above");
+				System.err.println("Enter the mention book above");
 				type = sc.nextInt();
 				
 			}
@@ -196,6 +216,7 @@ public class LibraryValidation {
 		
 		
 	}
+	
 	
 	}
 

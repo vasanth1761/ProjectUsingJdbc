@@ -1,7 +1,6 @@
 package com.library.test;
 
 import java.sql.SQLException;
-import java.util.Scanner;
 
 import com.library.dao.BookImpl;
 
@@ -18,9 +17,22 @@ public class Library {
 			
 			Scanner sc=new Scanner(System.in);
 			System.out.println("\n1.ADMIN \n2.USER  \n3.EXIT");
-			int adminUser=sc.nextInt();
-	        while(true) 
-	        {
+			int adminUser=0;
+			while(sc.hasNext()) {
+			try 
+			{
+		        adminUser=sc.nextInt();
+		        if(adminUser!=1 && adminUser!=2 && adminUser!=3) {
+		        	System.out.println("Enter valid input");
+		        	 
+		        }
+			}
+			catch(InputMismatchException e)
+			{
+				System.out.println(e);
+				sc.nextLine();
+				
+			}
 	            if(adminUser==1||adminUser==2||adminUser==3)	
 	        {
 	        switch(adminUser)
@@ -49,11 +61,7 @@ public class Library {
 				 adminUser=sc.nextInt();
 			}
 			}
-	        else
-	        {
-	        	System.out.println("Select the 1- user or 2-admin");
-	        	adminUser=sc.nextInt();
-	        }       
+	            
 				
 		    }
 

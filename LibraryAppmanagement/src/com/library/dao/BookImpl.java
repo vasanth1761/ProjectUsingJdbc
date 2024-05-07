@@ -7,6 +7,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.library.test.LibraryValidation;
 import com.library.util.BookTable;
 
 public  class BookImpl implements BookNameDAO {
@@ -17,7 +18,7 @@ public  class BookImpl implements BookNameDAO {
 		// TODO Auto-generated method stub
 		{   
 			 Connection con= BookTable.getConnection();
-			 String read="select*from bookname";
+			 String read="SELECT*FROM bookname";
 			 PreparedStatement p=con.prepareStatement(read);
 			 ResultSet r=p.executeQuery();
 			 ResultSetMetaData rs=r.getMetaData();
@@ -33,7 +34,7 @@ public  class BookImpl implements BookNameDAO {
 				 for(int i=1;i<=columnnumber;i++)
 				 {
 					 String columnvalue=r.getString(i);
-					 System.out.print(rs.getColumnName(i)+":"+columnvalue);
+					 System.out.println(rs.getColumnName(i)+" : "+columnvalue+" ");
 				 }
 				 System.out.println("");
 			 }
@@ -57,7 +58,7 @@ public  class BookImpl implements BookNameDAO {
 		 System.out.println("Enter the part book: ");
 		 int book=sc.nextInt();
 		 sc.nextLine();
-		 String query="insert into bookname values(?,?,?,?)";
+		 String query="INSERT into bookname VALUES(?,?,?,?)";
 		 PreparedStatement p= connection.prepareStatement(query);
 		 p.setInt(1,no);
 		 p.setString(2, name);
@@ -70,16 +71,18 @@ public  class BookImpl implements BookNameDAO {
 	}
 	public void login()throws ClassNotFoundException,SQLException {
 		
-		
+//		LibraryValidation li=new LibraryValidation();
 		Scanner sc=new Scanner(System.in);
 		Connection con=BookTable.getConnection();
 		System.out.println("Enter the userid");
-		String id=sc.next();
+		String id=LibraryValidation.UserId();
 		System.out.println("Enter the username");
-		String name=sc.next();
+//		String name=sc.next();
+	    String name=LibraryValidation.usernameValidation();
 		System.out.println("Enter the password:");
 		String password=sc.next();
-		String query ="select user_id from loginregister where user_id=?and user_name=?and user_password=? ";
+//		String password=LibraryValidation.passwordValidation();
+		String query ="SELECT user_id FROM loginregister WHERE user_id=?AND user_name=?AND user_password=? ";
 		PreparedStatement p=con.prepareStatement(query);
 		p.setString(1, id);
      	p.setString(2,name);
@@ -104,18 +107,18 @@ public  class BookImpl implements BookNameDAO {
 		Scanner sc=new Scanner(System.in);
 		Connection con=BookTable.getConnection();
 		System.out.println("Enter the userid");
-		String id=sc.next();
-		System.out.println("Enter the username");
-		String na=sc.next();
+		String id=LibraryValidation.UserId(); 
+	    System.out.println("Enter the username");
+		String na=LibraryValidation.usernameValidation();
 	    System.out.println("Enter the password");
-	    String password=sc.next();
-		String query="select user_id from loginregister where user_id=?";
+	    String password=LibraryValidation.passwordValidation();
+		String query="SELECT user_id FROM loginregister WHERE user_id=?";
 		PreparedStatement prepare=con.prepareStatement(query);
 		prepare.setString(1, id);
 		ResultSet result=prepare.executeQuery();
 		if(!result.next())
 		{
-			String check="insert into loginregister values(?,?,?)";
+			String check="INSERT INTO loginregister VALUES(?,?,?)";
 			
 			PreparedStatement p=con.prepareStatement(check);
 			p.setString(1, id);
@@ -126,8 +129,8 @@ public  class BookImpl implements BookNameDAO {
 		}
 		else
 		{
-			System.out.println("you already have an account");
-			System.out.println("please login ");
+			System.err.println("you already have an account");
+			System.err.println("please login ");
 			login();
 			System.out.println("Registered Successfully ");
 			
@@ -168,6 +171,7 @@ public  class BookImpl implements BookNameDAO {
 		read();
 		System.out.println("Deleted  successfully");
 	}
+	
 	
 
 }

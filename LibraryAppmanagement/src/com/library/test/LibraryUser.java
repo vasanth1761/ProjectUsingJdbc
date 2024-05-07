@@ -14,7 +14,7 @@ public class LibraryUser {
 	public static void libraryUserPortal() throws ClassNotFoundException, SQLException
 	{    
 		
-//	    BookImpl loginobj=new BookImpl();
+	    BookImpl loginobj=new BookImpl();
 		Scanner sc=new Scanner(System.in);
 		LibraryP lib=new LibraryP();
 		System.out.println("         --WELCOME TO LIBRARAY-- ");
@@ -24,6 +24,7 @@ public class LibraryUser {
 	    System.out.println("     ------WELCOME------");
 	    System.out.println("----------------------------");
 		System.out.println("Available book types are:");
+	    loginobj.read();
 		System.out.println("----COMICS----");
 		System.out.println("----HORROR----");
 		System.out.println("----SCIENCE FICTION----");
